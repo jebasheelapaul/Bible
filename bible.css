@@ -1,0 +1,289 @@
+body {
+  font-family: 'Noto Serif Tamil', serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.bible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FBFBFB;
+  padding: 10px 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 20px;
+}
+
+main {
+  padding: 16px;
+}
+
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+#chapterTitle {
+  font-size: 20px;
+  margin: 0;
+  padding: 8px 0;
+  font-weight: bold;
+}
+
+#downloadPdfBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background-color 0.2s ease;
+}
+#downloadPdfBtn:hover {
+  background-color: #e0e0e0;
+}
+
+#versesContainer {
+  padding-bottom: 40px !important; /* Enough to clear the fixed footer */
+}
+
+.verses {
+  margin-top: 12px;
+}
+
+.verse-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  word-wrap: break-word;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-left button,
+.nav-right button {
+  background: none;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 998;
+  display: none;
+}
+.drawer-overlay.visible {
+  display: block;
+}
+
+.bible-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75%;
+  max-width: 380px;
+  height: 100%;
+  background: #fff;
+  z-index: 999;
+  overflow-y: auto;
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  padding: 20px;
+}
+
+.bible-drawer.hidden {
+  transform: translateX(100%);
+}
+
+.drawer-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #000;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+#bibleDrawer h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #ccc;
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.book-list li {
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.book-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.back-btn {
+  margin-bottom: 12px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+}
+#chapterList li {
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 4px;
+  background: #f2f2f2;
+  border-radius: 4px;
+}
+#chapterList li:hover {
+  background: #ddd;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.verse-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 600px) {
+  .verse-wrapper {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+}
+
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 24px 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+#modalCopyBtn {
+  margin-top: 16px;
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.verse-text {
+  cursor: pointer;
+}
+
+.verse-text:hover {
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+
+
+#downloadConfirm .modal-content {
+  background: #fff;
+  padding: 24px 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+#downloadConfirm button {
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#confirmDownloadBtn {
+  background: #28a745;
+  color: white;
+}
+#cancelDownloadBtn {
+  background: #ccc;
+  color: black;
+}
