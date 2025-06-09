@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>தமிழ் வேதாகமம் [Tamil Bible]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/bible.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bible-header">
+    <div class="logo"><img src="./assets/logo_gladys_ark_circle.svg" alt="Glady's Ark Logo"></div>
+    <div class="title"><img src="./assets/Tamil_bible_Logo.svg"></div>
+    <div class="menu-icon" id="menuToggle"><img src="./assets/hamburger_menu.svg"></div>
+  </header>
+
+  <!-- Body -->
+  <main id="verseBox">
+    <div class="verse-wrapper">
+      <div class="chapter-header">
+        <h2 id="chapterTitle">ஆதியாகமம் 1</h2>
+        <div class="chapter-actions">
+          <button id="downloadPdfBtn">⋮</button>
+        </div>
+      </div>
+      <div class="verses" id="versesContainer"></div>
+    </div>
+  </main>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" style="display: none;"></div>
+
+  <!-- Bottom Sticky Menu -->
+  <footer class="bottom-nav">
+    <div class="nav-left">
+      <button id="prevChapter"><img src="./assets/arrow previous.svg"></button>
+      <button id="nextChapter"><img src="./assets/arrow next.svg"></button>
+    </div>
+    <div class="nav-right">
+      <button id="bibleMenuBtn"><img src="./assets/menu bible.svg"></button>
+      <button id="settingsBtn"><img src="./assets/menu settings.svg"></button>
+      <button id="homeBtn"><img src="./assets/menu home.svg"></button>
+    </div>
+  </footer>
+
+  <!-- Drawer and Overlay -->
+  <div id="drawerOverlay" class="drawer-overlay"></div>
+  <div id="bibleDrawer" class="bible-drawer hidden">
+    <button id="drawerClose" class="drawer-close">&times;</button>
+    <div id="bookSelection">
+      <h3>பழைய ஏற்பாடு</h3>
+      <ul id="oldTestamentList" class="book-list"></ul>
+      <h3>புதிய ஏற்பாடு</h3>
+      <ul id="newTestamentList" class="book-list"></ul>
+    </div>
+    <div id="chapterSelection" style="display: none;">
+      <button id="backToBooks" class="back-btn">← பின்செல்ல</button>
+      <h3 id="selectedBookTitle"></h3>
+      <ul id="chapterList" class="book-list"></ul>
+    </div>
+  </div>
+
+  <!-- Settings Popup -->
+  <div id="settingsMenu" class="popup hidden">
+    <h4>அகர அளவு</h4>
+    <button onclick="changeFontSize(2)">A+</button>
+    <button onclick="changeFontSize(-2)">A-</button>
+  </div>
+
+
+
+  <!-- Verse Action Modal -->
+<div id="verseModal" class="modal hidden">
+  <div class="modal-content">
+    <p id="modalVerseText"></p>
+    <button id="modalCopyBtn">📋 Copy</button>
+  </div>
+</div>
+
+
+
+<!-- Download Confirmation Popup -->
+<div id="downloadConfirm" class="modal hidden">
+  <div class="modal-content">
+    <p>இந்த அதிகாரத்தைப் பதிவிறக்கம் செய்ய வேண்டுமா?</p>
+    <div style="margin-top: 16px;">
+      <button id="confirmDownloadBtn">ஆம்</button>
+      <button id="cancelDownloadBtn" style="margin-left: 8px;">இல்லை</button>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="./scripts/NotoSerifTamil-normal.js"></script>
+  <script src="./scripts/bible.js"></script>
+</body>
+</html>
