@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ta">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>தமிழ் வேதாகமம் [Tamil Bible]</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/bible.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>தமிழ் வேதாகமம் [Tamil Bible]</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/bible.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+  </head>
 <body>
 
   <!-- Header -->
@@ -23,7 +23,7 @@
       <div class="chapter-header">
         <h2 id="chapterTitle">ஆதியாகமம் 1</h2>
         <div class="chapter-actions">
-          <button id="downloadPdfBtn">⋮</button>
+          <!--<button id="downloadPdfBtn">⋮</button>-->
         </div>
       </div>
       <div class="verses" id="versesContainer"></div>
@@ -36,13 +36,13 @@
   <!-- Bottom Sticky Menu -->
   <footer class="bottom-nav">
     <div class="nav-left">
-      <button id="prevChapter"><img src="./assets/arrow previous.svg"></button>
-      <button id="nextChapter"><img src="./assets/arrow next.svg"></button>
+      <button id="homeBtn"><img src="./assets/menu home.svg"></button>
+      <button id="settingsBtn"><img src="./assets/menu settings.svg"></button>
+      <button id="bibleMenuBtn"><img src="./assets/menu bible.svg"></button>   
     </div>
     <div class="nav-right">
-      <button id="bibleMenuBtn"><img src="./assets/menu bible.svg"></button>
-      <button id="settingsBtn"><img src="./assets/menu settings.svg"></button>
-      <button id="homeBtn"><img src="./assets/menu home.svg"></button>
+      <button id="prevChapter"><img src="./assets/arrow previous.svg"></button>
+      <button id="nextChapter"><img src="./assets/arrow next.svg"></button>
     </div>
   </footer>
 
@@ -82,20 +82,25 @@
 
 
 
-<!-- Download Confirmation Popup -->
+<!-- Download Confirmation Popup 
 <div id="downloadConfirm" class="modal hidden">
   <div class="modal-content">
     <p>இந்த அதிகாரத்தைப் பதிவிறக்கம் செய்ய வேண்டுமா?</p>
     <div style="margin-top: 16px;">
       <button id="confirmDownloadBtn">ஆம்</button>
       <button id="cancelDownloadBtn" style="margin-left: 8px;">இல்லை</button>
+      <button id="downloadPdfBtn">Download PDF</button>
     </div>
   </div>
 </div>
+-->
 
+    <!-- JavaScript -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./fonts/Bamini.js"></script>        
+    <script src="./fonts/NotoSerifTamil.js"></script>
+    <script src="./scripts/pdfgen.js"></script> -->
+    <script src="./scripts/bible.js"></script>
 
-
-  <script src="./scripts/NotoSerifTamil-normal.js"></script>
-  <script src="./scripts/bible.js"></script>
 </body>
 </html>
