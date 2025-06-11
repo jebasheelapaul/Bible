@@ -131,54 +131,6 @@ document.getElementById("verseModal").addEventListener("click", (e) => {
 
 
 
-document.getElementById("downloadPdfBtn").onclick = () => {
-  document.getElementById("downloadConfirm").classList.remove("hidden");
-};
-
-document.getElementById("confirmDownloadBtn").onclick = () => {
-  document.getElementById("downloadConfirm").classList.add("hidden");
-  generatePDF();
-};
-
-document.getElementById("cancelDownloadBtn").onclick = () => {
-  document.getElementById("downloadConfirm").classList.add("hidden");
-};
-
-
-
-function generatePDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-
-  const bookInfo = booksMeta.find(b => b.english === currentBook);
-  const title = `${bookInfo.tamil} ${currentChapter}`;
-  const container = document.getElementById("versesContainer");
-
-  let y = 20;
-  doc.setFont("NotoSerifTamil", "bold");
-  doc.setFontSize(14);
-  doc.text(title, 10, y);
-
-  doc.setFont("NotoSerifTamil", "normal");
-  doc.setFontSize(12);
-  y += 10;
-
-  container.querySelectorAll(".verse-text").forEach(el => {
-    const text = el.textContent.trim();
-    const lines = doc.splitTextToSize(text, 180);
-    if (y + lines.length * 7 > 280) {
-      doc.addPage();
-      y = 20;
-    }
-    lines.forEach(line => {
-      doc.text(line, 10, y);
-      y += 7;
-    });
-  });
-
-  doc.save(`${title}.pdf`);
-}
-
 document.getElementById("prevChapter").onclick = () => {
   if (currentChapter > 1) {
     currentChapter--;
