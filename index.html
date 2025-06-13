@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tamil Bible</title>
+  <link rel="stylesheet" href="css/index_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <img src="./assets/logo_gladys_ark_circle.svg" alt="Bible Logo" /><br>
+    <img src="./assets/Tamil_bible_Logo.svg">
+
+
+    <div class="index-container">
+      <div class="tab-container">
+        <div class="tab active" onclick="showTab('oldTestamentList')">பழைய ஏற்பாடு</div>
+        <div class="tab" onclick="showTab('newTestamentList')">புதிய ஏற்பாடு</div>
+      </div>
+    
+      <div id="oldTestamentList" class="books-container active"></div>
+      <div id="newTestamentList" class="books-container"></div>
+    </div>
+
+    <div id="chapterModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <h3 id="modalTitle">அதிகாரங்கள்</h3>
+    <div id="chapterList" class="chapter-grid"></div>
+  </div>
+</div>
+
+
+  <script src="./scripts/index_script.js"></script>
+</body>
+</html>
