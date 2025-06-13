@@ -180,7 +180,7 @@ drawerOverlay.onclick = closeDrawer;
 drawerCloseBtn.onclick = closeDrawer;
 
 document.getElementById("homeBtn").onclick = () => {
-  window.location.href = "../index.html";
+  window.location.href = "index.html";
 };
 
 function showLoader() {
@@ -189,3 +189,5 @@ function showLoader() {
 function hideLoader() {
   document.getElementById("loader").style.display = "none";
 }
+
+
