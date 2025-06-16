@@ -75,7 +75,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 18px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
