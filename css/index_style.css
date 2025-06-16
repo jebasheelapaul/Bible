@@ -75,7 +75,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 17px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -90,12 +90,12 @@ main {
   /* Improve tap targets on mobile */
 @media (max-width: 480px) {
   .book {
-    font-size: 14px;
+    font-size: 16px;
     padding: 4px 4px;
   }
 
   .tab {
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 10px;
   }
 
