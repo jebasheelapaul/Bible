@@ -191,3 +191,13 @@ function hideLoader() {
 }
 
 
+
+
+document.getElementById("chapterTitle").onclick = () => {
+  const book = booksMeta.find(b => b.english === currentBook);
+  if (book) {
+    showChapterSelection(book);
+    bibleDrawer.classList.remove("hidden");
+    drawerOverlay.classList.add("visible");
+  }
+};
