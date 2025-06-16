@@ -37,6 +37,36 @@ main {
   font-weight: bold;
 }
 
+.clickable-title {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+}
+
+#chapterTitle::after {
+  content: " ▾";
+  font-size: 16px;
+  margin-left: 4px;
+  vertical-align: middle;
+  user-select: none;
+}
+
+
+.clickable-title:hover {
+  color: #444;
+}
+
+.dropdown-arrow {
+  font-size: 16px;
+  transform: translateY(1px);
+  user-select: none;
+}
+
+
+
+
 #downloadPdfBtn {
   width: 36px;
   height: 36px;
