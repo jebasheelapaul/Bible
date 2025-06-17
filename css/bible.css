@@ -165,7 +165,7 @@ main {
 }
 
 #bibleDrawer h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 20px;
   margin-bottom: 8px;
   padding-bottom: 6px;
@@ -173,14 +173,14 @@ main {
 }
 
 .book-list {
+  font-size: 18px;
   list-style: none;
   padding: 0;
   margin-bottom: 20px;
 }
 
 .book-list li {
-  padding: 8px 12px;
-  margin-bottom: 4px;
+  padding: 8px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -193,7 +193,7 @@ main {
   margin-bottom: 12px;
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   color: #333;
 }
@@ -246,6 +246,8 @@ main {
 
 
 .modal {
+  font-size: 19px;
+  line-height: 24px;
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
