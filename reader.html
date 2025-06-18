@@ -57,10 +57,26 @@
   <div id="bibleDrawer" class="bible-drawer hidden">
     <button id="drawerClose" class="drawer-close">&times;</button>
     <div id="bookSelection">
-      <h3>பழைய ஏற்பாடு</h3>
-      <ul id="oldTestamentList" class="book-list"></ul>
-      <h3>புதிய ஏற்பாடு</h3>
-      <ul id="newTestamentList" class="book-list"></ul>
+
+ 
+      
+      <div class="expandable-section">
+        <h3 class="expand-toggle" data-expanded="false" onclick="toggleExpand('oldTestamentList', this)">
+          <span class="arrow-icon">▸</span> பழைய ஏற்பாடு
+        </h3>
+        <ul id="oldTestamentList" class="book-list"></ul>
+      </div>
+      
+      <div class="expandable-section">
+        <h3 class="expand-toggle" data-expanded="false" onclick="toggleExpand('newTestamentList', this)">
+          <span class="arrow-icon">▸</span> புதிய ஏற்பாடு
+        </h3>
+        <ul id="newTestamentList" class="book-list"></ul>
+      </div>
+      
+      
+      
+
     </div>
     <div id="chapterSelection" style="display: none;">
       <button id="backToBooks" class="back-btn">← அதிகாரம்</button>
@@ -69,12 +85,6 @@
     </div>
   </div>
 
-  <!-- Settings Popup -->
-  <div id="settingsMenu" class="popup hidden">
-    <h4>அகர அளவு</h4>
-    <button onclick="changeFontSize(2)">A+</button>
-    <button onclick="changeFontSize(-2)">A-</button>
-  </div>
 
 
 
