@@ -201,3 +201,40 @@ document.getElementById("chapterTitle").onclick = () => {
     drawerOverlay.classList.add("visible");
   }
 };
+
+
+
+
+
+
+
+function toggleExpand(listId, headerEl) {
+  const list = document.getElementById(listId);
+  const arrow = headerEl.querySelector(".arrow-icon");
+  const isExpanded = headerEl.getAttribute("data-expanded") === "true";
+
+  if (isExpanded) {
+    list.style.display = "none";
+    arrow.textContent = "▸";
+    headerEl.setAttribute("data-expanded", "false");
+  } else {
+    list.style.display = "block";
+    arrow.textContent = "▾";
+    headerEl.setAttribute("data-expanded", "true");
+  }
+}
+
+// Expand Old Testament by default
+document.getElementById("oldTestamentList").style.display = "block";
+const oldHeader = document.querySelector('h3.expand-toggle[onclick*="oldTestamentList"]');
+oldHeader.querySelector(".arrow-icon").textContent = "▾";
+oldHeader.setAttribute("data-expanded", "true");
+
+
+// Collapse New Testament by default
+const newHeader = document.querySelector('h3.expand-toggle[onclick*="newTestamentList"]');
+newHeader.querySelector(".arrow-icon").textContent = "▸";
+newHeader.setAttribute("data-expanded", "false");
+document.getElementById("newTestamentList").style.display = "none";
+
+
