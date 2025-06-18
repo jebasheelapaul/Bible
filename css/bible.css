@@ -155,8 +155,8 @@ main {
 
 .drawer-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 24px;
+  right: 24px;
   font-size: 28px;
   background: none;
   border: none;
@@ -167,21 +167,18 @@ main {
 
 #bibleDrawer h3 {
   font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  padding-bottom: 6px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1px solid #000000;
 }
 
 .book-list {
   font-size: 18px;
   list-style: none;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .book-list li {
-  padding: 8px;
+  padding: 4px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease;
