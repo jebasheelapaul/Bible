@@ -159,7 +159,8 @@ function closeImageModal() {
 }
 
 
-
+let currentGallery = 'tamil';
+let currentIndex = 0;
 
 function openImageModal(imageSrc) {
   const modal = document.getElementById('imageModal');
@@ -169,18 +170,51 @@ function openImageModal(imageSrc) {
   const facebookBtn = document.getElementById('facebookBtn');
   const instagramBtn = document.getElementById('instagramBtn');
 
+  modal.classList.remove('hidden');
   modalImage.src = imageSrc;
   downloadBtn.href = imageSrc;
 
-  const encodedImage = encodeURIComponent(imageSrc);
+  const encoded = encodeURIComponent(imageSrc);
+  whatsappBtn.href = `https://wa.me/?text=${encoded}`;
+  facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encoded}`;
+  instagramBtn.href = `https://www.instagram.com/?url=${encoded}`;
 
-  whatsappBtn.href = `https://wa.me/?text=${encodedImage}`;
-  facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedImage}`;
-  instagramBtn.href = `https://www.instagram.com/?url=${encodedImage}`;
-
-  modal.classList.remove('hidden');
+  // set current index
+  const galleryList = document.querySelectorAll(`#${currentGallery}-wallpapers img`);
+  galleryList.forEach((img, idx) => {
+    if (img.src === imageSrc) currentIndex = idx;
+  });
 }
 
-function closeImageModal() {
-  document.getElementById('imageModal').classList.add('hidden');
+function showNextImage() {
+  const galleryList = document.querySelectorAll(`#${currentGallery}-wallpapers img`);
+  if (currentIndex < galleryList.length - 1) {
+    currentIndex++;
+    openImageModal(galleryList[currentIndex].src);
+  }
 }
+
+function showPrevImage() {
+  const galleryList = document.querySelectorAll(`#${currentGallery}-wallpapers img`);
+  if (currentIndex > 0) {
+    currentIndex--;
+    openImageModal(galleryList[currentIndex].src);
+  }
+}
+
+// Attach button listeners
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('nextImageBtn').addEventListener('click', showNextImage);
+  document.getElementById('prevImageBtn').addEventListener('click', showPrevImage);
+});
+
+
+document.addEventListener('keydown', function (e) {
+  const modal = document.getElementById('imageModal');
+  if (!modal.classList.contains('hidden')) {
+    if (e.key === 'ArrowRight') showNextImage();
+    if (e.key === 'ArrowLeft') showPrevImage();
+    if (e.key === 'Escape') closeImageModal();
+  }
+});
+
