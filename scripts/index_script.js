@@ -76,3 +76,111 @@ function closeModal() {
 }
 
 document.addEventListener('DOMContentLoaded', loadBooks);
+
+
+
+
+
+
+
+// Expand Book List
+document.addEventListener('DOMContentLoaded', () => {
+  const expandBtn = document.getElementById('expandBtn');
+  if (expandBtn) {
+    expandBtn.addEventListener('click', () => {
+      document.getElementById('newTestamentList').classList.add('active');
+      expandBtn.style.display = 'none';
+    });
+  }
+
+  loadWallpapers();
+});
+
+// Switch language tabs
+function switchGallery(lang) {
+  document.querySelectorAll('#wallpaper-section .tab').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.wallpaper-scroll-container').forEach(c => c.classList.add('hidden'));
+
+  if (lang === 'tamil') {
+    document.querySelectorAll('#wallpaper-section .tab')[0].classList.add('active');
+    document.getElementById('tamil-wallpapers').classList.remove('hidden');
+  } else {
+    document.querySelectorAll('#wallpaper-section .tab')[1].classList.add('active');
+    document.getElementById('english-wallpapers').classList.remove('hidden');
+  }
+}
+
+// Load wallpapers
+function loadWallpapers() {
+  const tamil = document.getElementById('tamil-wallpapers');
+  const english = document.getElementById('english-wallpapers');
+
+  for (let i = 1; i <= 10; i++) {
+    const imgTa = document.createElement('img');
+    imgTa.src = `./wallpapers/tamil/verse${i}.png`;
+    imgTa.alt = `Tamil Verse ${i}`;
+    imgTa.onclick = () => openImageModal(imgTa.src);  // <-- Added
+    tamil.appendChild(imgTa);
+
+    const imgEn = document.createElement('img');
+    imgEn.src = `./wallpapers/english/verse${i}.png`;
+    imgEn.alt = `English Verse ${i}`;
+    imgEn.onclick = () => openImageModal(imgEn.src);  // <-- Added
+    english.appendChild(imgEn);
+  }
+}
+
+
+// Lightbox/modal
+function openImageModal(imageSrc) {
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const whatsappBtn = document.getElementById('whatsappBtn');
+  const facebookBtn = document.getElementById('facebookBtn');
+  const instagramBtn = document.getElementById('instagramBtn');
+
+  modalImage.src = imageSrc;
+  downloadBtn.href = imageSrc;
+
+  // Encode for social sharing
+  const shareUrl = encodeURIComponent(window.location.href);
+  const imageToShare = encodeURIComponent(imageSrc);
+
+  whatsappBtn.href = `https://wa.me/?text=${imageToShare}`;
+  facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${imageToShare}`;
+  instagramBtn.href = `https://www.instagram.com/?url=${imageToShare}`;
+
+  modal.classList.remove('hidden');
+}
+
+function closeImageModal() {
+  document.getElementById('imageModal').classList.add('hidden');
+}
+
+
+
+
+function openImageModal(imageSrc) {
+  const modal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const whatsappBtn = document.getElementById('whatsappBtn');
+  const facebookBtn = document.getElementById('facebookBtn');
+  const instagramBtn = document.getElementById('instagramBtn');
+
+  modalImage.src = imageSrc;
+  downloadBtn.href = imageSrc;
+
+  const encodedImage = encodeURIComponent(imageSrc);
+
+  whatsappBtn.href = `https://wa.me/?text=${encodedImage}`;
+  facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedImage}`;
+  instagramBtn.href = `https://www.instagram.com/?url=${encodedImage}`;
+
+  modal.classList.remove('hidden');
+}
+
+function closeImageModal() {
+  document.getElementById('imageModal').classList.add('hidden');
+}
