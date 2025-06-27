@@ -23,9 +23,11 @@
       <div id="newTestamentList" class="books-container"></div>
     </div>
 
+
+
     <div id="chapterModal" class="modal hidden">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">✖</span>
+  <div class="chapter-modal-content">
+    <span class="close-btn1" onclick="closeModal()"><img src="./assets/icon_close.svg" height="16px" width="16px"></span>
     <h3 id="modalTitle">அதிகாரங்கள்</h3>
     <div id="chapterList" class="chapter-grid"></div>
   </div>
@@ -33,9 +35,49 @@
 
 
 
+
+
+
+
+<!-- Expand Button -->
+<div style="margin-top: 10px;">
+  <button id="expandBtn" class="tab">+ மேலும் காண்க</button>
+</div>
+
+<!-- Wallpaper Gallery Section -->
+<section id="wallpaper-section" style="margin-top: 30px;">
+  <h2>🖼️ வேதவார்த்தை வால்பேப்பர்</h2>
+  <div class="tab-container">
+    <div class="tab active" onclick="switchGallery('tamil')">தமிழ்</div>
+    <div class="tab" onclick="switchGallery('english')">English</div>
+  </div>
+  <div class="wallpaper-scroll-container" id="tamil-wallpapers"></div>
+  <div class="wallpaper-scroll-container hidden" id="english-wallpapers"></div>
+</section>
+
+<!-- Modal Lightbox -->
+<div id="imageModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeImageModal()"><img src="./assets/icon_close.svg" height="16px" width="16px"></span>
+    <img id="modalImage" src="" alt="Bible Wallpaper" />
+    <div class="modal-icons">
+      <a id="downloadBtn" href="#" download title="Download"><img src="./assets/facebook_icon.svg"></a>
+      <a id="whatsappBtn" target="_blank" title="WhatsApp"><img src="./assets/whatsapp_logo.svg"></a>
+      <a id="facebookBtn" target="_blank" title="Facebook"><img src="./assets/instra_icon.svg"></a>
+      <a id="instagramBtn" target="_blank" title="Instagram"><img src="./assets/icon_download.svg"></a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 <footer class="site-footer">
-  <p>&copy; 2025 Tamil Bible | Glady’s Ark</p>
   <img src="./assets/logo_gladys_ark.svg" alt="Glady's Ark Logo" class="footer-logo">
+  <p>&copy; 2025 Glady’s Ark</p>  
 </footer>
 
 
